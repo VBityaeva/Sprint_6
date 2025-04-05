@@ -15,15 +15,10 @@ import static org.mockito.Mockito.when;
 public class FelineTest {
 
     @Spy
-    @InjectMocks
-    Feline feline;  // Mockito будет использовать реальный объект Feline, но можно будет частично замокировать методы
-
-    @Mock
-    FelineBehavior felineBehavior;  // Мок для интерфейса FelineBehavior
+    Feline feline;
 
     @Test
     public void testEatMeat() throws Exception {
-        // Убираем лишнюю заглушку, так как метод уже тестируется через вызов eatMeat()
         Assert.assertEquals(Arrays.asList("Животные", "Птицы", "Рыба"), feline.eatMeat());
     }
 
